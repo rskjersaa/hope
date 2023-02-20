@@ -12,7 +12,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-      {/* <h1>Furnish Hope</h1> */}
       <div className="container">
       <nav className="navbar navbar-expand-xl navbar-light bg-light" >
   <a className="navbar-brand" href="#">

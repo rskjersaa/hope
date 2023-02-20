@@ -41,18 +41,18 @@ const Form = () => {
         })
     }
     return (
-        
+        <div className="img" position="fixed" style= {{backgroundImage: `url(${welcomeImage})`}}>    
     <div classname="container">
-        <div className="App" style= {{backgroundImage: `url(${welcomeImage})`}}>
+        <div className="img" style= {{backgroundImage: `url(${welcomeImage})`}}>
         
         {/* <div className="d-flex justify-content-end"><Link to="/">Back to Home</Link></div> */}
         <div className="row">
         <h4 className="col-md-8 offset-md-2">Thank you for donating!</h4>
         <h6> If you have more items than the form allows please fill out another form.</h6>
-        <div className="col-md-8 offset-md-2 border border-3 ">
+        <div className="col-md-8 offset-md-2 border border-3 d-flex justify-content-center ">
             
                     
-                    <form className="mb-3" onSubmit={submitHandler}>
+                    <form className="mb-3 p-5 " onSubmit={submitHandler}>
                     <div className="col-md-12">
                         {/* <label className = "form-label">Description:</label> */}
                         <input 
@@ -184,14 +184,14 @@ const Form = () => {
                             </select>
                         </div>
                     {errors && errors.delivery ? <span className='text-danger'>{errors.delivery.message}</span>:null}<br></br>
-                        <div className="col-md-12">
+                        <div className="col-md-12" >
                         {/* <label className = "form-label">Description:</label> */}
                         <input 
                         type="text" 
                         className="form-control" 
                         onChange={(e)=>setDescription(e.target.value)} 
                         value={description}
-                        placeholder="Add a brief description here"/>
+                        placeholder="Add a brief description: colors, etc."/>
                         </div>
                     {errors && errors.description ? <span className='text-danger'>{errors.description.message}</span>:null}<br></br>
                     {/* <Link to ={'/viewdonation'}> */}
@@ -201,6 +201,7 @@ const Form = () => {
                     
             </div>
         </div>
+    </div>
     </div>
     </div>
     )

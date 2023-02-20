@@ -2,6 +2,7 @@ import React from 'react'
 import {Link, useNavigate, useParams} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import welcomeImage from "../images/pencil1.jpg";
 
 const Edit = () => {
     const {id} = useParams();
@@ -52,7 +53,7 @@ const Edit = () => {
         })
         .then ((res)=>{
             console.log(res)
-            navigate ('/')
+            navigate (`/viewdonation/${id}`)
         })
         .catch ((err)=> {
             console.log(err.response.data.error.errors)
@@ -61,12 +62,13 @@ const Edit = () => {
     }
 
     return (
+        <div className="App" style= {{backgroundImage: `url(${welcomeImage})`}}>
         <div classname="container">
         {/* <div className="App" style= {{backgroundImage: `url(${welcomeImage})`}}> */}
         
         {/* <div className="d-flex justify-content-end"><Link to="/">Back to Home</Link></div> */}
         <div className="row">
-        <h4 className="col-md-8 offset-md-2">Need to edit your donation?? You can make changes here!</h4>
+        <h4 className="col-md-8 offset-md-2 p-5">Need to edit your donation?? You can make changes here!</h4>
         
         <div className="col-md-8 offset-md-2 border border-3 ">
             
@@ -213,7 +215,7 @@ const Edit = () => {
                         placeholder="Add a brief description here"/>
                         </div>
                     {errors && errors.description ? <span className='text-danger'>{errors.description.message}</span>:null}<br></br>
-                    {/* <Link to ={'/viewdonation'}> */}
+                    {/* <Link to ={'/viewdonation/:id'}> */}
                         <button className="btn btn-primary col-4" type="submit">Submit</button>
                         {/* </Link> */}
                     </form>
@@ -221,7 +223,7 @@ const Edit = () => {
             </div>
         </div>
     </div>
-    // </div>
+    </div>
     )
 }
 

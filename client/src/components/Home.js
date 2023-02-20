@@ -9,7 +9,7 @@ import furnishLogo from"../images/Logo_black_CMYK+(PRINT).png"
 
 const Home = () => {
     return (
-    <div className="App" style= {{backgroundImage: `url(${welcomeImage})`}}>
+    <div className="img" position="fixed" style= {{backgroundImage: `url(${welcomeImage})`}}>
     {/* <img src={furnishLogo} width="80" height="80" class="d-inline-block align-center" alt=""></img> */}
     {/* <h1 className='text-dark'>Thank you for creating homes for people in need.  </h1> */}
     <p className="mt-4">Click on the word donate above to start your donation</p>

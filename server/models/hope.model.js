@@ -42,7 +42,7 @@ const HopeSchema = new mongoose.Schema({
         
     },
     description: {type: String,
-        required:[true],
+        // required:[true],
         minLength:[3, "Description must be at least 3 characters long"],
     },
     

@@ -2,12 +2,13 @@ import React from 'react'
 import {useState, useEffect} from 'react';
 import axios from "axios"
 import {Link, useNavigate, useParams} from 'react-router-dom'
+import welcomeImage from "../images/frame.jpg";
 
 const Display = (props) => {
 
     const [list, setList]= useState ([])
     const [hope, SetHope]= useState({})
-    // const [order,setOrder]= useState("ASC")
+    const [order,setOrder]= useState("ASC")
     const navigate=useNavigate()
     const {id} = useParams()
 
@@ -36,54 +37,60 @@ const Display = (props) => {
             console.log(err)
     })
 }
-    // const sorting=(col)=>{
-    //     if(order==="ASC"){
-    //         const sorted = [...list].sort((a,b)=>
-    //         a[col].toLowerCase() > b [col].toLowerCase() ? 1 :-1
-    //         );
-    //         setList(sorted);
-    //         setOrder("DSC")
-    //     }
-    //     if(order==="DSC"){
-    //         const sorted = [...list].sort((a,b)=>
-    //         a[col].toLowerCase() < b [col].toLowerCase() ? 1 :-1
-    //         );
-    //         setList(sorted);
-    //         setOrder("DSC")
-    //     }
-    // }
+    const sorting=(col)=>{
+        if(order==="ASC"){
+            const sorted = [...list].sort((a,b)=>
+            a[col].toLowerCase() > b [col].toLowerCase() ? 1 :-1
+            );
+            setList(sorted);
+            setOrder("DSC")
+        }
+        // if(order==="DSC"){
+        //     const sorted = [...list].sort((a,b)=>
+        //     a[col].toLowerCase() < b [col].toLowerCase() ? 1 :-1
+        //     );
+        //     setList(sorted);
+        //     setOrder("DSC")
+        // }
+    }
 
 console.log(list)
 
     return (
+        <div className="img2" style= {{backgroundImage: `url(${welcomeImage})`}}>
         <div className="container">
         <div className ="row">
         
             <div className="col-10 mx-auto">
             
             {/* <div className="d-flex justify-content-end"><Link to="/donate">Donate</Link></div> */}
-                <h4 className="purple-text">List of Donations</h4>
-                <p className="text-danger">click on item to sort</p>
+                {/* <h4 className="purple-text">List of Donations</h4> */}
+                <p className="text-danger">click on "Name" to sort</p>
         <table className= "table table-bordered">
         <thead>
             <tr >
-                {/* <th onClick={()=> sorting("item1")}className="display-5" >Item</th> */}
-                <th className="display-5">Order ID</th>
-                <th className="display-5">Name</th>
-                <th className="display-5">Item 1</th>
-                <th className="display-5">Item 2</th>
-                <th className="display-5">Actions </th>
+                <th onClick={()=> sorting("name")}className="display-5" >Name</th>
+                {/* <th className="display-5">Order ID</th> */}
+                <th className="display-5">Item</th>
+                <th className="display-5">Modify Your Donation</th>
+                {/* <th className="display-5">Item 2</th> */}
+                {/* <th className="display-5">Actions </th> */}
             </tr>
         </thead>
         <tbody>
             {list.map((hope, index)=> {
                 return (
                     <tr key={index}>
-                        <td>{hope._id}</td>
+                        {/* <td>{hope._id}</td> */}
                         <td>{hope.name}</td>
                         
-                        <td>{hope.item1}</td>
-                        <td>{hope.item2}</td>
+                        <td>
+                            <tr className="text-start">{hope.item1}</tr>
+                            <tr className="text-start">{hope.item2}</tr>
+                            <tr className="text-start">{hope.item3}</tr>
+                            <tr className="text-start">{hope.item4}</tr>
+                            
+                        </td>
                         <td>
                         <Link to ={`/edit/${hope._id}`}>
                             <button className ="btn btn-info">Edit
@@ -105,6 +112,7 @@ console.log(list)
         
             </div>
         </div>
+    </div>
     </div>
     )
 }

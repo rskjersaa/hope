@@ -39,8 +39,8 @@ const DisplayOne = (props) => {
     return (
         <div className="App" style= {{backgroundImage: `url(${welcomeImage})`}}>
         <div className = "container">
-        <div className="d-flex justify-content-end"><Link to="/">Back to Home</Link></div>
-        <h2 className="">View your Donation Details:  {hope.item}</h2>
+        {/* <div className="d-flex justify-content-end"><Link to="/">Back to Home</Link></div> */}
+        <h2 className="text-start pt-5 pb-3">View your Donation Details:  {hope.name}</h2>
         <div className=" border border-dark p-3 height-">
             <table className="col-md-10">
                 {/* <tr>
@@ -86,7 +86,7 @@ const DisplayOne = (props) => {
             {/* <div className="d-flex justify-content-end"><button className ="btn btn-danger" onClick={deleteHandler}>Complete Your Request {hope.item}</button></div> */}
             </div>
             <div>
-                <p>This is your tax receipt! Please keep for your records.</p>
+                <p className = "text-end">This is your tax receipt! Please keep for your records.</p>
             </div>
         </div>
     </div>

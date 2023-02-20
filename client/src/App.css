@@ -1,6 +1,15 @@
 .App {
   text-align: center;
-  background-image:url(" https://www.dreamstime.com/photos-images/welcome-home.html");
+  /* background-image:url(" https://www.dreamstime.com/photos-images/welcome-home.html"); */
+  /* position:fixed;
+  min-width:100%;
+  min-height:100%;
+  background-size: cover;
+  background-position: center; */
+}
+.img {
+  text-align: center;
+  /* background-image:url(" https://www.dreamstime.com/photos-images/welcome-home.html"); */
   position:fixed;
   min-width:100%;
   min-height:100%;
@@ -8,6 +17,15 @@
   background-position: center;
 }
 
+.img2 {
+  text-align: center;
+  /* background-image:url(" https://www.dreamstime.com/photos-images/welcome-home.html"); */
+  
+  min-width:100%;
+  min-height:100%;
+  background-size: cover;
+  background-position: center;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
