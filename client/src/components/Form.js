@@ -106,7 +106,8 @@ const Form = () => {
                             <option value="Barstools">Barstools</option>
                             <option value="Kitchen Essentials">Kitchen Essentials</option>
                             <option value="Bath Essentials">Bath Essentials</option>
-                            <option value="Other">Other</option>
+                            <option value="Other">Other, will add in description</option>
+                            <option value="None">No other donations at this time</option>
                         </select>
                         </div>
                     {errors && errors.item2 ? <span className='text-danger'>{errors.item2.message}</span>:null}<br></br>
@@ -129,7 +130,8 @@ const Form = () => {
                             <option value="Barstools">Barstools</option>
                             <option value="Kitchen Essentials">Kitchen Essentials</option>
                             <option value="Bath Essentials">Bath Essentials</option>
-                            <option value="Other">Other</option>
+                            <option value="Other">Other, will add in description</option>
+                            <option value="None">No other donations at this time</option>
                         </select>
                         </div>
                     {errors && errors.item3 ? <span className='text-danger'>{errors.item3.message}</span>:null}<br></br>
@@ -152,7 +154,8 @@ const Form = () => {
                             <option value="Barstools">Barstools</option>
                             <option value="Kitchen Essentials">Kitchen Essentials</option>
                             <option value="Bath Essentials">Bath Essentials</option>
-                            <option value="Other">Other</option>
+                            <option value="Other">Other, will add in description</option>
+                            <option value="None">No other donations at this time</option>
                         </select>
                         </div>
                     {errors && errors.item4 ? <span className='text-danger'>{errors.item4.message}</span>:null}<br></br>
